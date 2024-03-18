@@ -1,0 +1,414 @@
+/* estilo.css */
+
+/* Reset de estilos padrão do navegador */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos gerais */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    margin: 0 auto;
+    padding: 100px;
+  }
+  
+  /* Estilos do cabeçalho */
+  header {
+    background-color: #fccc54;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .header-content {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .titulo {
+    color: black;
+    font-size: 40px;
+    margin: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+
+  .subtitulo {
+    color: black;
+    font-size: 16px;
+    margin: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    letter-spacing: 5px;
+  }
+  
+  nav {
+    background-color: #fccc54;
+    text-align: left;
+    padding: 10px 0;
+    position: relative;
+    
+  }
+  
+  nav a {
+    color: black;
+    text-decoration: none;
+    margin-left: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+  
+  section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  
+  .button1 {
+    background: none;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 10px;
+    position: absolute; /* Torna o botão posicionado de forma absoluta */
+    top: 50%; /* Posiciona o botão no centro vertical do nav */
+    transform: translateY(-50%); /* Ajusta o posicionamento vertical do botão */
+    right: 20px; /* Ajusta a posição horizontal do botão à direita */
+  }
+  
+  .button1:hover {
+    background: rgba(170, 170, 170, 0.062);
+    transition: 0.5s;
+  }
+  
+  .button1 svg {
+    color: #fff;
+  }
+  
+  /* The switch - the box around the slider */
+  .switch-container {
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    margin-right: 60px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .switch-container .slider {
+    --background: linear-gradient(to right, #013750, #2c6b74);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background);
+    transition: background-color 0.5s;
+    border-radius: 30px;
+  }
+  
+  .switch-container .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 15px -4px 0px 15px #f8ea27;
+    background: var(--background);
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+  
+  .switch-container input:checked + .slider {
+    background-color: #000;
+  }
+  
+  .switch-container input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 8px -4px 0px 0px #f8f8f4;
+  }
+  
+  .containerpes {
+    box-sizing: border-box;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    right: 20px;
+    margin-right: 130px;
+  }
+  
+  .mainbox {
+    box-sizing: border-box;
+    position: relative;
+    width: 230px;
+    height: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 160px;
+    background-color: #013750;
+    transition: all 0.3s ease;
+  }
+  
+  .checkbox:focus {
+    border: none;
+    outline: none;
+  }
+  
+  .checkbox:checked {
+    right: 10px;
+  }
+  
+  .checkbox:checked ~ .mainbox {
+    width: 50px;
+  }
+  
+  .checkbox:checked ~ .mainbox .search_input {
+    width: 0;
+    height: 0px;
+  }
+  
+  .checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+  }
+  
+  .checkbox {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    z-index: 9;
+    cursor: pointer;
+    appearance: none;
+  }
+  
+  .search_input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    font-size: 1em;
+    color: white;
+    transition: all 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .search_input::placeholder {
+    color: rgba(255, 255, 255, 0.776);
+  }
+  
+  .iconContainer {
+    box-sizing: border-box;
+    padding-top: 5px;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+  
+  .search_icon {
+    box-sizing: border-box;
+    fill: white;
+    font-size: 1.3em;
+  }
+  
+  .principal{
+    position: relative;
+    border: 1px solid #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-left: 45px;
+    margin-top: 20px;
+    margin-right: 45px;
+    background-color: #FFDE59;
+    display: flex;
+  }
+  .logoinicio{
+    position: relative;
+    background-color: #fb5b5b;
+    margin-left: 0px;
+    width: 550px;
+    height: 550px;
+  }
+  .conteudos {
+    position: relative;
+    background-color: #665bfb;
+    border: 1px solid #fff;
+    margin-left: 600px;
+  }
+  
+  #conteudos h2 {
+    color: black;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .card {
+    position: relative;
+    width: 190px;
+    height: 254px;
+    background: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+  }
+  
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+    filter: blur(30px);
+  }
+  
+  .card b {
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+  
+  .card img {
+    position: absolute;
+    z-index: 3;
+    scale: 0.8;
+    opacity: 0.25;
+    transition: 0.5s;
+  }
+  
+  .card:hover img {
+    scale: 0.5;
+    opacity: 0.9;
+    transform: translateY(-70px);
+  }
+  
+  .card .content {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s;
+  }
+  
+  .card:hover .content {
+    transform: scale(1);
+    bottom: 25px;
+  }
+  
+  .content .title {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .content .title span {
+    font-weight: 300;
+    font-size: 0.70em;
+  }
+  
+  .content .sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  .sci li {
+    list-style: none;
+  }
+  
+  .sci li .fa-brands {
+    width: 14px;
+  }
+  
+  .sci li .fa-facebook {
+    width: 10px;
+  }
+  
+  .sci li a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+  
+  .sci li a:hover {
+    fill: currentColor;
+    color: rgba(255, 255, 255, 1);
+  }
+  
